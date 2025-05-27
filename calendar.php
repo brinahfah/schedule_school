@@ -10,18 +10,27 @@
 <body>
     <div class="main">
         <?php
-        session_start(); // Toujours au début de CHAQUE page qui utilise les sessions
+       session_start();
 
-       
-        // Note: db_connexion.php n'est pas strictement nécessaire ici si tu ne fais pas de requêtes SQL.
-        // Je le laisse pour le moment au cas où tu aurais d'autres logiques ici.
-        // Si tu ne l'utilises que pour les sessions, tu peux le retirer.
-        // require_once 'db_connexion.php';
-         
-         require_once 'logout.php';
+        // Inclure le fichier de connexion à Supabase
+        require_once 'db_connexion.php';
 
-        /** @var PDO $pdo */
+        /** @var PDO $pdo */ // Aide pour l'autocomplétion dans certains IDE, déclare $pdo comme un objet PDO
 
+        // Maintenant, vous pouvez utiliser l'objet $pdo pour interagir avec votre base de données Supabase
+        // Exemple de requête :
+        try {
+            $stmt = $pdo->query("SELECT id_school, nom_prenom FROM schools");
+            $schools = $stmt->fetchAll();
+
+            foreach ($schools as $school) {
+                echo "<li>" . htmlspecialchars($school['nom_prenom']) . "</li>";
+            }
+            echo "</ul>";
+
+        } catch (PDOException $e) {
+            echo "Erreur lors de la récupération des écoles : " . htmlspecialchars($e->getMessage());
+        }
         // --- Message de bienvenue ---
         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true && isset($_SESSION['nom_prenom'])) {
             $prenom = htmlspecialchars($_SESSION['nom_prenom']); // Sécurise l'affichage du nom

@@ -1,0 +1,103 @@
+body{
+    
+    font-family: serif;
+    background-color: rgb(68, 140, 223);
+    font-size: 100%;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    
+    
+   
+    
+}
+
+.container{
+   
+    width: 50%;
+    height: 100%;
+    
+}
+
+
+h1 {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+   
+    
+}
+
+.login{
+    position: relative;
+    top: 45px;
+    right: 50px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+   
+
+}
+
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    overflow: hidden;
+   
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-family: serif;
+    padding: 5px;
+    
+}
+
+input {
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+button{
+    padding: 16px ;
+    font-size: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+button:hover {
+    background-color: #331eaa;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+img {
+    position: relative;
+    bottom: 420px;
+    left: 90%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    
+}
